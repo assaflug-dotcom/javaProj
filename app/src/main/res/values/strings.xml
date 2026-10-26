@@ -1,0 +1,51 @@
+
+<resources>
+    <string name="app_name">הרשמת תלמידים</string>
+    <string name="title_registration">טופס הרשמת תלמיד</string>
+
+    <string name="first_name">שם פרטי</string>
+    <string name="last_name">שם משפחה</string>
+    <string name="email">כתובת אימייל</string>
+
+    <string name="grade_title">בחירת כיתה</string>
+    <string name="grade_10">י</string>
+    <string name="grade_11">יא</string>
+    <string name="grade_12">יב</string>
+
+    <string name="major_title">בחירת מגמה</string>
+    <string name="major_hint">בחרו מגמה</string>
+    <string-array name="majors">
+        <item>@string/major_choose</item>
+        <item>@string/major_software</item>
+        <item>@string/major_physics</item>
+        <item>@string/major_biology</item>
+        <item>@string/major_electronics</item>
+    </string-array>
+    <string name="major_choose">בחרו מגמה</string>
+    <string name="major_software">הנדסת תוכנה</string>
+    <string name="major_physics">פיזיקה</string>
+    <string name="major_biology">ביולוגיה</string>
+    <string name="major_electronics">אלקטרוניקה</string>
+
+    <string name="notifications">אני מאשר קבלת התראות</string>
+    <string name="terms">אני מאשר את תנאי השימוש</string>
+    <string name="register_button">הירשם</string>
+
+    <string name="error_first_name">יש להזין שם פרטי</string>
+    <string name="error_last_name">יש להזין שם משפחה</string>
+    <string name="error_email_empty">יש להזין כתובת אימייל</string>
+    <string name="error_email_invalid">יש להזין כתובת אימייל תקינה</string>
+    <string name="error_grade">יש לבחור כיתה</string>
+    <string name="error_major">יש לבחור מגמה</string>
+    <string name="error_terms">יש לאשר את תנאי השימוש</string>
+
+    <string name="result_title">פרטי התלמיד:</string>
+    <string name="result_first_name">שם פרטי: %1$s</string>
+    <string name="result_last_name">שם משפחה: %1$s</string>
+    <string name="result_email">אימייל: %1$s</string>
+    <string name="result_grade">כיתה: %1$s</string>
+    <string name="result_major">מגמה: %1$s</string>
+    <string name="result_notifications_yes">קבלת התראות: כן</string>
+    <string name="result_notifications_no">קבלת התראות: לא</string>
+    <string name="result_terms_yes">תנאי שימוש: אושרו</string>
+</resources>
