@@ -1,4 +1,3 @@
-
 <resources>
     <string name="app_name">הרשמת תלמידים</string>
     <string name="title_registration">טופס הרשמת תלמיד</string>
@@ -48,4 +47,21 @@
     <string name="result_notifications_yes">קבלת התראות: כן</string>
     <string name="result_notifications_no">קבלת התראות: לא</string>
     <string name="result_terms_yes">תנאי שימוש: אושרו</string>
+
+    <!-- מחרוזות חדשות למסך הפרטים, עריכה, מייל ושיתוף -->
+    <string name="title_details">פרטי התלמיד</string>
+    <string name="btn_edit">עריכת פרטים</string>
+    <string name="btn_email">שליחת מייל</string>
+    <string name="btn_share">שיתוף פרטים</string>
+
+    <string name="title_edit">עריכת פרטי תלמיד</string>
+    <string name="btn_cancel">ביטול</string>
+    <string name="btn_save_return">שמור וחזור</string>
+
+    <string name="email_subject">פרטי תלמיד</string>
+    <string name="email_no_app">אין אפליקציית מייל מותקנת במכשיר</string>
+    <string name="share_no_app">אין אפליקציה זמינה לשיתוף</string>
+    <string name="share_title">שתף פרטי תלמיד באמצעות</string>
+
+    <string name="email_body_template">שם פרטי: %1$s\nשם משפחה: %2$s\nאימייל: %3$s\nכיתה: %4$s\nמגמה: %5$s\nקבלת התראות: %6$s\nתנאי שימוש: אושרו</string>
 </resources>

@@ -1,7 +1,8 @@
 package com.example.studentregistration;
 
+import java.io.Serializable;
 
-public class Student {
+public class Student implements Serializable {
 
     private final String firstName;
     private final String lastName;
@@ -52,4 +53,3 @@ public class Student {
         return termsAccepted;
     }
 }
-

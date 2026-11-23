@@ -1,5 +1,6 @@
 package com.example.studentregistration;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -33,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox cbNotifications;
     private CheckBox cbTerms;
 
-    private TextView tvResult;
     private TextView tvGradeError;
     private TextView tvMajorError;
 
@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         cbTerms = findViewById(R.id.cbTerms);
 
         Button btnRegister = findViewById(R.id.btnRegister);
-        tvResult = findViewById(R.id.tvResult);
         tvGradeError = findViewById(R.id.tvGradeError);
         tvMajorError = findViewById(R.id.tvMajorError);
 
@@ -167,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
             );
         }
 
-        // אם יש שגיאה, לא מציגים ולא שומרים נתונים
+        // אם יש שגיאה, לא ממשיכים
         boolean valid = !firstName.isEmpty()
                 && !lastName.isEmpty()
                 && !email.isEmpty()
@@ -194,8 +193,10 @@ public class MainActivity extends AppCompatActivity {
         // שמירת האובייקט ב-SharedPreferences
         saveStudent(student);
 
-        // הצגת פרטי התלמיד
-        displayStudent(student);
+        // מעבר למסך הפרטים באמצעות Intent והעברת אובייקט התלמיד
+        Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+        intent.putExtra("student", student);
+        startActivity(intent);
     }
 
     private void saveStudent(Student student) {
@@ -236,9 +237,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadStudent() {
 
-        // אם לא נשמרו נתונים, לא מציגים תוצאה
+        // אם לא נשמרו נתונים, אין מה למלא
         if (!preferences.contains("firstName")) {
-            tvResult.setVisibility(View.GONE);
             return;
         }
 
@@ -277,48 +277,5 @@ public class MainActivity extends AppCompatActivity {
 
         cbNotifications.setChecked(student.isNotifications());
         cbTerms.setChecked(student.isTermsAccepted());
-
-        displayStudent(student);
-    }
-
-    private void displayStudent(Student student) {
-
-        String notificationText;
-
-        if (student.isNotifications()) {
-            notificationText =
-                    getString(R.string.result_notifications_yes);
-        } else {
-            notificationText =
-                    getString(R.string.result_notifications_no);
-        }
-
-        String result =
-                getString(R.string.result_title) + "\n"
-                        + getString(
-                        R.string.result_first_name,
-                        student.getFirstName()
-                ) + "\n"
-                        + getString(
-                        R.string.result_last_name,
-                        student.getLastName()
-                ) + "\n"
-                        + getString(
-                        R.string.result_email,
-                        student.getEmail()
-                ) + "\n"
-                        + getString(
-                        R.string.result_grade,
-                        student.getGrade()
-                ) + "\n"
-                        + getString(
-                        R.string.result_major,
-                        student.getMajor()
-                ) + "\n"
-                        + notificationText + "\n"
-                        + getString(R.string.result_terms_yes);
-
-        tvResult.setText(result);
-        tvResult.setVisibility(View.VISIBLE);
     }
 }
